@@ -66,3 +66,19 @@ SRE is now spread well beyond Google and many organizations are adopting SRE pri
    3. SREs "shift left" and provide "wisdom of production" to development teams.
    4. In SRE we encourage **more** engineers to have experience of production deployments, **not less**
    5. No one team or individual should become the ops team.
+
+## SRE Service Level Objectives and Error Budgets
+
+### What is a SLO?
+
+- A Service Level Objective is a goal for how well a product or service should operate
+- SLOs are tightly linked to user experience
+  - If the SLOs are being met then the user will be happy
+- Setting and measuring service level objective is a key aspect of the SRE role
+- The most widely tracked SLO is availability
+- Products and services could and should have multiple SLOs
+- We use SLIs to measure if we are meeting our SLOs
+- Monitoring tool or service will provide the data used for checking compliance against the SLOs
+- 99.9% of web requests should be successful
+  - If there are 1 million requests, 1000 can fail and this is an **error budget**
+- Failure to hit an SLO must have consequences. If more than 1000 requests fail in a month the some remedial action must be taken. And this is an **error budget policy**
