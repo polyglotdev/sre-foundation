@@ -31,7 +31,7 @@ SRE is now spread well beyond Google and many organizations are adopting SRE pri
 4. Leverage tooling and automation
 5. Measure everything
 
-### SRE Principles and Practices
+### SRE and its Principles
 
 1. Operations is a software problem
    1. The basic tenet of SRE is that doing operations well is a software problem.
@@ -53,3 +53,16 @@ SRE is now spread well beyond Google and many organizations are adopting SRE pri
    2. Decide what to automate and how to automate it
    3. Take an engineering-based approach to automation and tasks rather than just toiling at them over and over.
    4. This should dominate what an SRE does.
+   5. Do not automate a bad process - Fix the process first.
+   6. Sometimes in SRE we talk about, "automating ourselves out of a job" - this is a good thing.
+5. Reduce cost of failure
+   1. Late problems (defect) discovery is expensive so SRE looks for ways to avoid this
+   2. Look to improve MTTR(Mean Time to Recovery) and MTBF(Mean Time Between Failures)
+   3. Smaller Changes = Smaller Failures
+   4. Canaries and Blue-Green deployments are ways to reduce the cost of failure.
+6. Shared Ownership
+   1. SREs share skill sets with product development teams
+   2. Boundaries between "application development" and "production"(Dev & Ops) should be removed.
+   3. SREs "shift left" and provide "wisdom of production" to development teams.
+   4. In SRE we encourage **more** engineers to have experience of production deployments, **not less**
+   5. No one team or individual should become the ops team.
