@@ -147,3 +147,37 @@ Missed SLO's have noticeable consequences on business performance:
 - Social Media backlash: 36%
 
 > There will be no new feature launches allowed. Sprint planning may only pull post-mortem action items from the backlog. Software engineering teams must meet with SRE team daily to outline their improvement plans.
+
+- As an example HB could have a availability SLO of 99.9%
+- Every month this allows for 43 minutes of outages
+- New feature releases, patches, planned and un-planned downtime need to fit into this 43 minutes
+
+| Number of Nines | Availability (%) | Downtime per Year               | Downtime per Month      | Downtime per Week       | Downtime per Day       |
+|-----------------|------------------|---------------------------------|-------------------------|-------------------------|------------------------|
+| 1               | 90.0             | 36 days, 12 hours               | 72 hours                | 16 hours, 48 minutes    | 2 hours, 24 minutes    |
+| 2               | 99.0             | 3 days, 15 hours, 36 minutes    | 7 hours, 12 minutes     | 1 hour, 40 minutes      | 14 minutes, 24 seconds |
+| 3               | 99.9             | 8 hours, 45 minutes, 36 seconds | 43 minutes, 12 seconds  | 10 minutes, 4.8 seconds | 1 minute, 26.4 seconds |
+| 4               | 99.99            | 52 minutes, 33.6 seconds        | 4 minutes, 19.2 seconds | 1 minute, 0.48 seconds  | 8.64 seconds           |
+| 5               | 99.999           | 5 minutes, 15.36 seconds        | 25.92 seconds           | 6.048 seconds           | 0.864 seconds          |
+
+**Notes**:
+- Downtime per Year is based on 365 days per year.
+- Downtime per Month is based on 30 days per month.
+- Downtime per Week is based on 7 days per week.
+- Downtime per Day is based on 24 hours per day.
+
+### Discussion: What error budget policies would you use to enforce an availability SLO?
+
+1. Minimize deployment downtime
+2. Minimize infrastructure outages
+3. Address Scalability and performance issues
+
+How could you achieve these?
+
+- cloud automation
+- cloud immutable infrastructure
+- load balancing
+- caching
+- zero downtime deployments
+- A/B deployments
+- Canary deployments
