@@ -181,3 +181,13 @@ How could you achieve these?
 - zero downtime deployments
 - A/B deployments
 - Canary deployments
+
+## The VALET Dimension of SLO
+
+| Dimension      | SLO                                                          | Budget                                                       | Policy                     |
+|----------------|--------------------------------------------------------------|--------------------------------------------------------------|----------------------------|
+| Volume/Traffic | Does the service handle the right volumes of data or traffic | Budget 99.99% of HTTP requests per month succeed with 200 OK | Address scalability issues |
+| Availability   | Is the service available when needed                        | Budget 99.9% availability/uptime | Address downtime issues/outages, zero downtime deployments |
+| Latency        | Does the service deliver in a user-acceptable period of time? | Payload of 90% of HTTP responses returned in under 300ms | Address performance issues, caching, load balancing |
+| Errors | Is the service delivering the capabilities being requested? | 0.01% of HTTP requests return 4xx or 5xx status codes | Analyze and respond to main status codes, new functionality or infrastructure may be required |
+| Tickets | Are  our support services efficient? | 75% of service tickets are automatically resolved | Automate more manual process|
