@@ -82,3 +82,25 @@ SRE is now spread well beyond Google and many organizations are adopting SRE pri
 - 99.9% of web requests should be successful
   - If there are 1 million requests, 1000 can fail and this is an **error budget**
 - Failure to hit an SLO must have consequences. If more than 1000 requests fail in a month the some remedial action must be taken. And this is an **error budget policy**
+
+> 💡 SLO's are the most important component of SRE. They are the key to understanding how well a service is performing and how well it is meeting the needs of its users.
+
+According to the [2023 Catchpoint](./pdf/catchpoint.pdf) the things that teams are monitoring or measuring are:
+
+1. Availability/Uptime: 78%
+2. Performance/Response Times: 71%
+3. Latency: 64%
+4. Error Rates: 64%
+5. Throughput(MBs or requests per second): 48%
+6. Unauthorized Requests: 29%
+7. Saturation: 25%
+
+Availability is the same thing as uptime, e.g. does a service respond to a request?
+
+Response time is the total time it takes from when a user makes a request until they receive a response.
+
+Latency is the delay incurred in communicating a message(the time a message takes to travel from the sender to the receiver).
+
+## SRE Error Budgets
+
+> 💡 100% is the wrong reliability target for basically everything.
