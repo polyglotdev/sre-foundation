@@ -67,6 +67,8 @@ SRE is now spread well beyond Google and many organizations are adopting SRE pri
    4. In SRE we encourage **more** engineers to have experience of production deployments, **not less**
    5. No one team or individual should become the ops team.
 
+> 💡 "Shift left" is a practice in software development that involves integrating important development practices, such as testing, quality assurance (QA), and security measures, earlier in the software development lifecycle (SDLC). The phrase is also known as "Start Left" and is a central pillar of DevOps and DevSecOps.
+
 ## SRE Service Level Objectives and Error Budgets
 
 ### What is a SLO?
@@ -85,7 +87,7 @@ SRE is now spread well beyond Google and many organizations are adopting SRE pri
 
 > 💡 SLO's are the most important component of SRE. They are the key to understanding how well a service is performing and how well it is meeting the needs of its users.
 
-According to the [2023 Catchpoint](./pdf/catchpoint.pdf) the things that teams are monitoring or measuring are:
+According to the [2023 Catchpoint](./docs/catchpoint.pdf) the things that teams are monitoring or measuring are:
 
 1. Availability/Uptime: 78%
 2. Performance/Response Times: 71%
@@ -104,3 +106,44 @@ Latency is the delay incurred in communicating a message(the time a message take
 ## SRE Error Budgets
 
 > 💡 100% is the wrong reliability target for basically everything.
+
+[Risk and Error Budgets](https://dominiquehallan-links.com/risk-and-error-budgets)
+
+### Error Budgets: Good and Bad
+
+- **Bad**
+  - We have error budgets in SRE as
+going over budget usually means
+someone somewhere will have to
+work over-time or respond to
+out-of-hours issues
+Not hitting 99.9% of HTTP
+requests in a month usually
+means scalability issues so "ops"
+need to do something
+- **Good**
+  - On the other hand SRE practices
+encourage you to strategically burn
+the budget to zero every month,
+whether it's for feature launches or
+architectural changes
+This way you know you are running
+as fast as you can (velocity) without
+compromising availability
+
+### Error Budgets: Fixed?
+
+The negotiation to relax the SLO error budget bridges the gap and improves communication and understanding between Dev and Ops and the business. Watch out for high-risk deployments or large big-bang changes because they have a likelihood of issues and therefore more chance to blow the error budget.
+
+This should encourage the lean preference for small, incremental changes. In some cases the error budget may need to change to accommodate complex releases but this needs to be agreed upon by Dev and Ops and the business
+
+### Error Budget Policies
+
+Missed SLO's have noticeable consequences on business performance:
+
+- Lost Revenue: 70%
+- Drop in Employee productivity: 57%
+- Lost Customers: 49%
+- Social Media backlash: 36%
+
+> There will be no new feature launches allowed. Sprint planning may only pull post-mortem action items from the backlog. Software engineering teams must meet with SRE team daily to outline their improvement plans.
