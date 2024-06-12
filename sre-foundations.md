@@ -385,3 +385,39 @@ As the scale and reach of your services and infrastructure grows, then so does
 the amount of required monitoring, to the point where we have an "ocean" of alerts.
 
 > 💡 SLOs need to be focused on the user experience, not the tech
+
+## Observability
+
+- Observability is a measure of how well internal states of a system can be inferred from knowledge of its external outputs.
+- Monitoring is focused on things that we anticipate will go wrong, creating thresholds of acceptable behavior and alerts when they are breached.
+- In Observability, we don't respond to individual alerts since we are constantly observing and reacting to the current state of the service.
+- If the current state begins to degrade in any way then we can proactively respond to that.
+- Monitoring on the other hand waits for an outage to take place
+and then informs us that something has happened.
+
+[Additional Resources](https://dominiquehallan-links.com/3z7g2Ck)
+
+We want to improve alerting through SRE by having user-facing SLOs that are measured through SLIs.
+
+## Better Monitoring
+
+1. Traditional monitoring tools set a static threshold for each metric. Every time that threshold is breached, you received one alert. This can add up to having too many alerts. A better approach is to generate one alert for a group of metrics associated with a system or application - like a host or a database.
+2. Machine learning techniques can be applied to your monitoring data to offer you an idea of how your environment normally performs, making it easier to separate true alerts from false ones. This is the "normal" state.
+3. The final step to improving your signal-to-noise ratio is utilizing multi-criteria alerting. In short, by increasing the number of specific conditions you set on an alert rule, the less likely it is
+to trigger.
+
+[Additional Resource](https://dominiquehallan-links.com/4aYYcyP)
+
+
+## What Observability Looks Like
+
+- Distributed tracing: Is about getting data about a service that spans multiple components and microservices.
+- Event logging:  Provides a standard, centralized way for applications (and the operating system) to record important software and hardware events.
+- Internal performance data: Can be extracted from APM (application performance management) tools, giving details of how the application itself is performing.
+- User experiences: Involves understanding the user journey and what makes it successful.
+- Fewer paging alerts: Because we know what "normal" service looks like, and only alert if "normal" is degraded.
+- Ask what/if questions:  For example if we take a server out of action, what would be the impact on the user experience?
+
+Observability is all about collecting the datapoints that allow you to ask questions of the health of the service, proactively. Enabling you to check that things are okay, rather than waiting for and reacting to alerts and outages.
+
+> "This rich ecosystem of introspection and instrumentation is not particularly biased towards the traditional monitoring stack's concerns of actionable alerts and outages."
