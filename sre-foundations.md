@@ -449,3 +449,5 @@ Automation is a key part of SRE. It is the process of using technology to make a
   - Improved SLOs
 
 ![Automation Focus](./images/automation-focus.png)
+
+![SRE-Led Service Automation](./images/sre-led-service-automation.png)
