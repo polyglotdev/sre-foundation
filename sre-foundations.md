@@ -259,3 +259,59 @@ How could you achieve these?
 | Attritional | Toul is demotivating meaning people start looking elsewhere | Staff turnover results in extra costs and lost knowledge |
 | Unending | Never ending deluge of manual tasks, no time to find solutions, more time spent managing backlog of tasks than fixing them | Toil requires engineering effort to fix. If there is no engineering time available it won't be fixed. SLA's being breached |
 | Burnout | Personal and heath problems due to overload and disruptive work patterns | Potential for litigation and negative press |
+
+### Engineering Bankruptcy
+
+"Engineering bankruptcy" highlights the problem of unaddressed toil. Unaddressed toil can go critical, forming a chain reaction, where the future is nothing but toil. It ends up taking so much of everyone's til and effort to the point where there is no capacity left to do anything about it.
+
+Future products and services cannot be developed or improved, stifling innovation and resulting ultimately in the failure of the business.
+
+## Doing something about Toil
+
+> SRE is what happens when you ask a software engineer to design an operations team.
+
+1. Manual releases - toil reduced by creating external automation to do automated releases.
+2. Manually scaling infrastructure bil reduced by using external automation such as cloud bi sed auto scalers to perform the
+required scaling
+3. Manual password resets - toil reduced by enhancing the service to be offered up as a self-service feature
+4. Extracting data - toil reduced by using internal automation such as a database query via a feature/tool so users can again self-serve this.
+
+## Work we do
+
+- Daily
+  - Jenkins
+  - AWS Permission Grants
+- Every week
+  - DevSecOps table
+- Every now and then
+  - AWS Security Group
+  - AWS IAM Review
+- Never but should
+  - New builds
+  - Enhancements that are not things on 🔥
+
+## Make Engineering Time Available
+
+- Google has an advertised goal of keeping work toil to 50% of an SRE's time
+- At least 50% of each SRE's time should be spent on engineering tasks that will reduce toil or add service features
+- 50% rule ensure that one team/s or individual/s do not become the ops team
+
+## Move Towards SRE at Slack
+
+- Slack moved from 100 AWS instances to 15K instances over 4 years
+- Excessive toil caused by low-quality, noisy alerting.
+- Ops team consumed by interrupt-driven toil that they were unable to make progress on improving reliability
+- Slack explicitly committed to the importance of reliability over feature velocity
+- Operational ownership of services pushed back into the dev teams resulting in the teams making the code fixes
+necessary to stop the incident alerts
+
+## Is it worth Automating Everything?
+
+![Time saved](./images/time-saved.png)
+
+- There are cost and benefits associated with the engineering effort when automating away toil
+- You need to consider the engineering investment vs
+the payback once the toil has been removed
+- Consider for example a 5 year life of a service, if you do something every week and it takes you 1 minute to do it e.g. acknowledging a Monday morning disk space alert, then you have a budget of up to 4 hours to automate that task away. If it takes longer than 4 hours to automate it the it's probably not worth the effort.
+
+[Pragmatic Automation](https://dominiquehallan-links.com/4cfdbWo)
