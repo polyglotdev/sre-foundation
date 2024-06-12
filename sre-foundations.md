@@ -315,3 +315,27 @@ the payback once the toil has been removed
 - Consider for example a 5 year life of a service, if you do something every week and it takes you 1 minute to do it e.g. acknowledging a Monday morning disk space alert, then you have a budget of up to 4 hours to automate that task away. If it takes longer than 4 hours to automate it the it's probably not worth the effort.
 
 [Pragmatic Automation](https://dominiquehallan-links.com/4cfdbWo)
+
+## SRE Monitoring & Service Level Indicators
+
+[Implementing SRE Practices on Azure](https://dominiquehallan-links.com/3XsiAoG)
+
+## What do you monitor?
+
+- User Count
+- CPU Utilization
+- Disk Space Utilization
+- Memory Utilization
+- Network Utilization
+- Disk I/O
+- Network I/O
+- Latency
+- Error Rates
+- Uptime
+
+Maybe your monitoring is less technical and more about what makes users happy - again as an example maybe the user doesn't care if disk space is running out, but instead they only care that there is a problem preventing them from completing their "transaction".
+
+With these considerations in mind - how do they translate into into SLIs. - which equates to technically speaking, monitoring - and then onto SLOs- which as we know now, focus on the user experience.
+
+We need to specify our SLOs and then use the monitoring at our disposal to check our SLI's to make sure we are not
+breaching SLOs.
