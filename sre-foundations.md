@@ -361,3 +361,27 @@ Some service level indicators may also need client-side data collection, because
 - SLI measurement needs also to be time-bound in some way
 - The time horizon may vary depending on the organization and the SLO
 - For web requests per month, the time horizon is clear SLOs such as "successful bank payments" may require a broader horizon if bank payments are only made once or twice per month.
+
+Mapping SLOs to SLIs is simple:
+
+We use monitoring tools to measure SLIs constantly, aggregating across
+suitable time periods. We use our calculated SLIs to tell us if we are meeting our defined SLOs or not-they also tell us how much of our error budget is left (if any).
+
+## Monitoring
+
+- Monitoring is the process of collecting, aggregating, and displaying data about the performance and availability of a system.
+- Telemetry is the highly automated communications process by which measurements are made and other data collected at remote or inaccessible points and transmitted to receiving equipment for monitoring.
+- APM (Application Performance Monitoring) is a subset of monitoring that focuses on the performance of applications.
+
+SLOs define the "level of service" expected and SLIs show the "level of service" delivered.
+
+![Monitoring Anatomy](./images/monitoring-anatomy.png)
+
+![alt text](./images/monitoring-tools.png)
+
+> 💡 "We need to make sure that monitoring is effective without drowning in a sea of non-actionable alerts. The path to success is to instrument everything,but only monitor what truly matters" - Todd Palino
+
+As the scale and reach of your services and infrastructure grows, then so does
+the amount of required monitoring, to the point where we have an "ocean" of alerts.
+
+> 💡 SLOs need to be focused on the user experience, not the tech
