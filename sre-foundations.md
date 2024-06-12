@@ -184,10 +184,78 @@ How could you achieve these?
 
 ## The VALET Dimension of SLO
 
-| Dimension      | SLO                                                          | Budget                                                       | Policy                     |
-|----------------|--------------------------------------------------------------|--------------------------------------------------------------|----------------------------|
-| Volume/Traffic | Does the service handle the right volumes of data or traffic | Budget 99.99% of HTTP requests per month succeed with 200 OK | Address scalability issues |
-| Availability   | Is the service available when needed                        | Budget 99.9% availability/uptime | Address downtime issues/outages, zero downtime deployments |
-| Latency        | Does the service deliver in a user-acceptable period of time? | Payload of 90% of HTTP responses returned in under 300ms | Address performance issues, caching, load balancing |
-| Errors | Is the service delivering the capabilities being requested? | 0.01% of HTTP requests return 4xx or 5xx status codes | Analyze and respond to main status codes, new functionality or infrastructure may be required |
-| Tickets | Are  our support services efficient? | 75% of service tickets are automatically resolved | Automate more manual process|
+| Dimension      | SLO                                                           | Budget                                                       | Policy                                                                                        |
+|----------------|---------------------------------------------------------------|--------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
+| Volume/Traffic | Does the service handle the right volumes of data or traffic  | Budget 99.99% of HTTP requests per month succeed with 200 OK | Address scalability issues                                                                    |
+| Availability   | Is the service available when needed                          | Budget 99.9% availability/uptime                             | Address downtime issues/outages, zero downtime deployments                                    |
+| Latency        | Does the service deliver in a user-acceptable period of time? | Payload of 90% of HTTP responses returned in under 300ms     | Address performance issues, caching, load balancing                                           |
+| Errors         | Is the service delivering the capabilities being requested?   | 0.01% of HTTP requests return 4xx or 5xx status codes        | Analyze and respond to main status codes, new functionality or infrastructure may be required |
+| Tickets        | Are  our support services efficient?                          | 75% of service tickets are automatically resolved            | Automate more manual process                                                                  |
+
+---
+
+## SRE Reducing Toil
+
+### What is Toil?
+
+> 💡 Toil is the kind of work tied to running a production service that tends to be manual, repetitive, automatable, tactical, devoid of enduring value, and that scales linearly as a service grows. - Vivek Rau
+
+[SRE Book - Eliminating Toil](https://landing.google.com/sre/sre-book/chapters/eliminating-toil/)
+
+
+## You might have toil if you have processes that are
+
+- **Manual**:
+  - This includes work such as manually running a script that automates some task. Running a script may be quicker than manually executing each step in the script, but the hands-on time a human spends running that script (not the elapsed time) is still toil time.
+- **Repetitive**:
+  - If you’re performing a task for the first time ever, or even the second time, this work is not toil. Toil is work you do over and over. If you’re solving a novel problem or inventing a new solution, this work is not toil.
+- **Automatable**:
+  - If a machine could accomplish the task just as well as a human, or the need for the task could be designed away, that task is toil. If human judgment is essential for the task, there’s a good chance it’s not toil.21
+- **Tactical**:
+  - Toil is interrupt-driven and reactive, rather than strategy-driven and proactive. Handling pager alerts is toil. We may never be able to eliminate this type of work completely, but we have to continually work toward minimizing it.
+- **No enduring value**:
+  - If your service remains in the same state after you have finished a task, the task was probably toil. If the task produced a permanent improvement in your service, it probably wasn’t toil, even if some amount of grunt work—such as digging into legacy code and configurations and straightening them out—was involved.
+- `O(n)`**with service growth**:
+  - If the work involved in a task scales up linearly with service size, traffic volume, or user count, that task is probably toil. An ideally managed and designed service can grow by at least one order of magnitude with zero additional work, other than some one-time efforts to add resources.
+
+### Manual Toil
+
+1. Interrupts(non-urgent service-related messages and emails)
+2. On-call (urgent) responses
+3. Releases and pushes
+
+### Ways to Reduce Manual Toil
+
+- automated deployments
+- Approving deployments by automation through tools like Slack
+- Connecting to infrastructure to monitor some metric, moving from "eyes on glass" to "monitoring as code"
+
+## Repetitive toil
+
+- Doing the same test over and over
+- Acknowledging the same alert every morning
+- Dealing with interrupts
+
+### Ways to Reduce Repetitive Toil
+
+- Automate the testing
+- Automate the alerting that is meaningful
+- Automate the response to the alert
+
+## Toil is not 🙅‍♀️
+
+1. Regular work
+2. Making improvement
+3. Toil must include service under management
+4. Creative experimentation to solve a problem or create a solution may be repetitive but its not toil
+
+## Why is Toil Bad?
+
+| Impact of High Toil | Individuals | Organizations|
+|---------------------|-----------|--------------|
+| Slow Progress | Manual work and firefighting (toil) takes up the majority of time | New features do not get released quickly, missed value opportunity. Shortage of team capacity|
+| Poor Quality | Manual work often results in mistakes, time consuming to fix, impact on reputation | Excessive costs in support of services |
+| Career Stagnation | Career progression is limited, no time for learning new skills | High staff turnover, loss of knowledge and experience |
+| Attritional | Toul is demotivating meaning people start looking elsewhere | Staff turnover results in extra costs and lost knowledge |
+| Unending | Never ending deluge of manual tasks, no time to find solutions, more time spent managing backlog of tasks than fixing them | Toil requires engineering effort to fix. If there is no engineering time available it won't be fixed. SLA's being breached |
+| Burnout | Personal and heath problems due to overload and disruptive work patterns | Potential for litigation and negative press |
