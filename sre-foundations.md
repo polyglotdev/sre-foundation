@@ -421,3 +421,31 @@ to trigger.
 Observability is all about collecting the datapoints that allow you to ask questions of the health of the service, proactively. Enabling you to check that things are okay, rather than waiting for and reacting to alerts and outages.
 
 > "This rich ecosystem of introspection and instrumentation is not particularly biased towards the traditional monitoring stack's concerns of actionable alerts and outages."
+
+## SRE Tools & Automation
+
+Automation is a key part of SRE. It is the process of using technology to make a system operate automatically. Automation is used to reduce manual intervention, reduce human error, and improve efficiency.
+
+- Consistency - a machine will be more consistent than a human.
+- A platform upon which to build - automation can be used to build more automation.
+- Speed - automation can be faster than a human.
+- Reliability - automation can be more reliable than a human.
+
+### Automation Requires
+- A problem to be solved:
+  - Eliminate toil
+  - Improve SLOs
+- Appropriate tools:
+  - Configuration management
+  - Orchestration
+  - Monitoring
+  - Alerting
+- Engineering effort:
+  - Time to design and build
+  - Time to test
+  - Time to deploy
+- Measurable outcomes:
+  - Reduced toil
+  - Improved SLOs
+
+![Automation Focus](./images/automation-focus.png)
