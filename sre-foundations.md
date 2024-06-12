@@ -335,7 +335,29 @@ the payback once the toil has been removed
 
 Maybe your monitoring is less technical and more about what makes users happy - again as an example maybe the user doesn't care if disk space is running out, but instead they only care that there is a problem preventing them from completing their "transaction".
 
+## SLI (Service Level Indicators)
+
+> 💡 SLIs are ways for engineers to communicate quantitative data about systems.
+
+A common thread running throughout this learning path is that there should be a single source of the truth that everyone across the organization can trust Monitoring tools provide such a mechanism to collect and aggregate various datapoints, which are then used to derive SLI information.
+
 With these considerations in mind - how do they translate into into SLIs. - which equates to technically speaking, monitoring - and then onto SLOs- which as we know now, focus on the user experience.
 
-We need to specify our SLOs and then use the monitoring at our disposal to check our SLI's to make sure we are not
-breaching SLOs.
+We need to specify our SLOs and then use the monitoring at our disposal to check our SLI's to make sure we are not breaching SLOs.
+
+## SLI Measurement
+
+While many numbers can function as an SLI, it is generally recommended
+to treat the SLI as the ratio of two numbers: the number of good events divided by the total number of events.
+
+Considering our previous example, this then equates to: Number of successful (HTTP) web requests / total (HTTP) requests (success rate).
+
+This calculation should be performed continually on current data, and of which allows us to aggregate it over time and cross check and measure it against a stated service level objective (SLO).
+
+Many indicator metrics are naturally gathered on the server side, using a monitoring system such as Prometheus, or with periodic log analysis-for instance, HTTP 500 responses as a fraction of all requests.
+
+Some service level indicators may also need client-side data collection, because not measuring behavior at the client can miss a range of problems that affect users but don't affect server-side metrics.
+
+- SLI measurement needs also to be time-bound in some way
+- The time horizon may vary depending on the organization and the SLO
+- For web requests per month, the time horizon is clear SLOs such as "successful bank payments" may require a broader horizon if bank payments are only made once or twice per month.
