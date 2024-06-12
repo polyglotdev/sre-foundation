@@ -453,3 +453,219 @@ Automation is a key part of SRE. It is the process of using technology to make a
 ![SRE-Led Service Automation](./images/sre-led-service-automation.png)
 
 > SREs must be allowed to say no if reliability is at stake.
+
+## Automation Types
+
+1. **Proactive Automation**:
+   - Automation that is triggered by a known event or condition.
+   - For example, a server that is running out of disk space.
+   - Proactive automation can be used to prevent an outage.
+2. **Reactive Automation**:
+   - Automation that is triggered by an event or condition that has already occurred.
+   - For example, a server that has crashed.
+   - Reactive automation can be used to recover from an outage.
+3. **Predictive Automation**:
+   - Automation that is triggered by a prediction of a future event or condition.
+   - For example, a server that is predicted to run out of disk space in the next 24 hours.
+   - Predictive automation can be used to prevent an outage before it occurs.
+
+![SRE Tools](./images/sre-tools.png)
+
+### Manage
+
+- Audit Management
+  - The use of technology to manage and audit the performance of a system.
+- Auth and Access Management
+  - The use of technology to manage and control access to a system.
+- DevOps Score
+  - Metric showing DevOps adoption and maturity.
+- Value Stream Management
+  - The ability to visualize the flow of value delivery through the DevOps lifecycle. Gitlab Cl and the Jenkins extension, [DevOptics](https://dominiquehallan-links.com/45oEqLK) can provide this visualization.
+
+### Plan
+
+- Agile Planning
+  - The use of technology to plan and manage agile projects.
+- Issue Tracking
+  - The use of technology to track and manage issues.
+- Kanban Boards
+  - A visual representation of work in progress.
+- Time Tracking
+  - The use of technology to track time spent on tasks.
+- Agile Portfolio Management
+  - The use of technology to manage a portfolio of agile projects.
+- Service Desk
+  - ServiceNow
+- Requirements Management
+  - The use of technology to manage requirements.
+- Quality Management
+  - The use of technology to manage quality.
+
+### Create
+
+- Code Review
+  - The use of technology to review code.
+- Source Code Management
+  - The use of technology to manage source code.
+- Continuous Integration
+  - The use of technology to integrate code continuously.
+- Wiki
+  - The use of technology to create and manage a wiki.
+- Web IDE
+  - The use of technology to develop code in a web browser.
+- Static Code Analysis
+  - The use of technology to analyze code statically.
+- Code Search
+  - The use of technology to search for code.
+- Code Collaboration
+  - The use of technology to collaborate on code.
+
+### Verify
+
+- Automated Testing
+  - The use of technology to test code automatically.
+- Test Management
+  - The use of technology to manage tests.
+- Code Quality
+  - The use of technology to measure code quality.
+- CI
+  - Continuous Integration
+- Performance Testing
+  - Testing process of a software application to ensure that it will perform well under their expected workload.
+- Security Testing
+  - The use of technology to test the security of code.
+- Usability Testing
+  - The use of technology to test the usability of code.
+
+
+### Package
+
+- Artifact Repository
+  - The use of technology to store and manage artifacts.
+- Package Registry
+  - The use of technology to store and manage packages.
+- Container Registry
+  - The use of technology to store and manage containers.
+- Dependency Management/Proxy
+  - The use of technology to manage dependencies.
+- Helm Chart Registry
+  - The use of technology to store and manage Helm charts.
+- Dependency Firewall
+  - The use of technology to manage dependencies.
+- Container Security
+  - The use of technology to secure containers.
+
+### Secure
+
+- Static Application Security Testing
+  - The use of technology to test the security of applications.
+- DAST (Dynamic Application Security Testing)
+  - The use of technology to test the security of applications dynamically.
+- IAST (Interactive Application Security Testing)
+  - The use of technology to test the security of applications interactively.
+- SCA (Software Composition Analysis)
+  - The use of technology to analyze software composition.
+- Fuzz Testing
+  - The use of technology to test software by providing invalid, unexpected, or random data.
+
+### Secure Tooling
+
+- Secret Detection
+  - The use of technology to detect secrets.
+- Dependency Scanning
+  - The use of technology to scan dependencies.
+- Container Scanning
+  - The use of technology to scan containers.
+- License Compliance
+  - The use of technology to ensure license compliance.
+- Security Policy
+  - The use of technology to manage security policies.
+- Security Orchestration
+  - The use of technology to orchestrate security.
+- Security Information and Event Management
+  - The use of technology to manage security information and events.
+- Vuln DB
+  - Vulnerability Database
+- Security Training
+  - The use of technology to provide security training.
+
+### Deliver
+
+- Continuous Delivery
+  - The use of technology to deliver code continuously.
+- Release Management
+  - The use of technology to manage releases.
+- Feature Flags
+  - The use of technology to manage feature flags.
+- Change Management
+  - The use of technology to manage changes.
+- Deployment Automation
+  - The use of technology to automate deployments.
+- Deployment Frequency
+  - The frequency of deployments.
+- Deployment Monitoring
+  - The use of technology to monitor deployments.
+- Deployment Verification
+  - The use of technology to verify deployments.
+
+### Auto DevOps
+
+- Auto DevOps is a set of predefined CI/CD configuration settings that automatically configure your CI/CD pipeline in GitLab.
+- Chat Ops
+  - ChatOps is a collaboration model that connects people, tools, process, and automation into a transparent workflow.
+- Runbooks
+  - A runbook is a compilation of routine procedures and operations that the system administrator or operator carries out.
+
+### Monitor
+
+- Monitoring
+  - The use of technology to monitor code.
+- Log Management
+  - The use of technology to manage logs.
+- Error Tracking
+  - The use of technology to track errors.
+- Performance Monitoring
+  - The use of technology to monitor performance.
+- Synthetic Monitoring
+  - The use of technology to monitor synthetic transactions.
+- Real User Monitoring
+  - The use of technology to monitor real users.
+- Incident Management
+  - The use of technology to manage incidents.
+- Alerting
+  - The use of technology to alert on incidents.
+- Observability
+  - The use of technology to observe code.
+- Tracing
+  - The use of technology to trace code.
+- APM
+  - Application Performance Monitoring
+- Network Performance Monitoring
+  - The use of technology to monitor network performance.
+- Digital Experience Monitoring
+  - The use of technology to monitor digital experiences.
+
+### Defend
+
+- RASP (Runtime Application Self-Protection)
+  - The use of technology to protect applications at runtime.
+- WAF (Web Application Firewall)
+  - The use of technology to protect web applications.
+- Threat Intelligence
+  - The use of technology to provide threat intelligence.
+- Penetration Testing
+  - The use of technology to test the security of applications.
+- Security Scanning
+  - The use of technology to scan for security vulnerabilities.
+- UEBA (User and Entity Behavior Analytics)
+  - The use of technology to analyze user and entity behavior.
+- SOAR (Security Orchestration, Automation, and Response)
+  - The use of technology to orchestrate, automate, and respond to security incidents.
+- Vuln Management
+  - Vulnerability Management
+- Data loss Protection
+  - The use of technology to protect data loss.
+- Storage Security
+  - The use of technology to secure storage.
+- Container Network Security
+  - The use of technology to secure container networks.
