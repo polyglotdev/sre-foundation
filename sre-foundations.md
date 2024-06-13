@@ -760,3 +760,4 @@ few hours), then in practice, off-site mirrored backups must be continuously mai
 
 - [Chaos Monkey](https://dominiquehallan-links.com/chaos-monkey)
 - [Gremlin](https://dominiquehallan-links.com/gremlin)
+- [Intro to network failures](https://dominiquehallan-links.com/sloths-on-the-map)
