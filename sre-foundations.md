@@ -161,6 +161,7 @@ Missed SLO's have noticeable consequences on business performance:
 | 5               | 99.999           | 5 minutes, 15.36 seconds        | 25.92 seconds           | 6.048 seconds           | 0.864 seconds          |
 
 **Notes**:
+
 - Downtime per Year is based on 365 days per year.
 - Downtime per Month is based on 30 days per month.
 - Downtime per Week is based on 7 days per week.
@@ -201,7 +202,6 @@ How could you achieve these?
 > 💡 Toil is the kind of work tied to running a production service that tends to be manual, repetitive, automatable, tactical, devoid of enduring value, and that scales linearly as a service grows. - Vivek Rau
 
 [SRE Book - Eliminating Toil](https://landing.google.com/sre/sre-book/chapters/eliminating-toil/)
-
 
 ## You might have toil if you have processes that are
 
@@ -392,8 +392,7 @@ the amount of required monitoring, to the point where we have an "ocean" of aler
 - Monitoring is focused on things that we anticipate will go wrong, creating thresholds of acceptable behavior and alerts when they are breached.
 - In Observability, we don't respond to individual alerts since we are constantly observing and reacting to the current state of the service.
 - If the current state begins to degrade in any way then we can proactively respond to that.
-- Monitoring on the other hand waits for an outage to take place
-and then informs us that something has happened.
+- Monitoring on the other hand waits for an outage to take place and then informs us that something has happened.
 
 [Additional Resources](https://dominiquehallan-links.com/3z7g2Ck)
 
@@ -408,15 +407,14 @@ to trigger.
 
 [Additional Resource](https://dominiquehallan-links.com/4aYYcyP)
 
-
 ## What Observability Looks Like
 
 - Distributed tracing: Is about getting data about a service that spans multiple components and microservices.
-- Event logging:  Provides a standard, centralized way for applications (and the operating system) to record important software and hardware events.
+- Event logging: Provides a standard, centralized way for applications (and the operating system) to record important software and hardware events.
 - Internal performance data: Can be extracted from APM (application performance management) tools, giving details of how the application itself is performing.
 - User experiences: Involves understanding the user journey and what makes it successful.
 - Fewer paging alerts: Because we know what "normal" service looks like, and only alert if "normal" is degraded.
-- Ask what/if questions:  For example if we take a server out of action, what would be the impact on the user experience?
+- Ask what/if questions: For example if we take a server out of action, what would be the impact on the user experience?
 
 Observability is all about collecting the datapoints that allow you to ask questions of the health of the service, proactively. Enabling you to check that things are okay, rather than waiting for and reacting to alerts and outages.
 
@@ -432,6 +430,7 @@ Automation is a key part of SRE. It is the process of using technology to make a
 - Reliability - automation can be more reliable than a human.
 
 ### Automation Requires
+
 - A problem to be solved:
   - Eliminate toil
   - Improve SLOs
@@ -536,7 +535,6 @@ Automation is a key part of SRE. It is the process of using technology to make a
   - The use of technology to test the security of code.
 - Usability Testing
   - The use of technology to test the usability of code.
-
 
 ### Package
 
@@ -669,3 +667,31 @@ Automation is a key part of SRE. It is the process of using technology to make a
   - The use of technology to secure storage.
 - Container Network Security
   - The use of technology to secure container networks.
+
+## SRE Anti-Fragility and Learning from Failure
+
+Most organizations view failure as a bad thing - something to be avoided at all costs and something that involves repercussions for those involved, creating a culture of "fear of failure".
+
+Conversely those same organizations often advocate "big bang" large risk deployments with lots of risk and uncertainty - the kind of deployments that often invite failures.
+
+> "There is no such thing as failure. There are only results. It's time to stop beating yourself up and start realizing that everything you do is a success or a learning experience." - Tony Robbins
+
+> 💡 Success is stumbling from failure to failure with no loss of enthusiasm
+
+### Why learning form failure is important
+
+- In doing so it helps us to understand how things work together
+- When things break, we then know how to fix them
+- Helps in minimizing future issues and helps speed up the process of fixing things which also helps us be more profitable.
+
+## Benefits of Antifragility
+
+Anti-fragility is all about understanding disorder and using it to your advantage to be more resilient
+
+> "Failure happens, there is no way around it so stop pointing fingers. Embracing failure will help improve MTTD and MTTR metrics. Proactively addressing failure leads to more robust systems."
+
+- MTTD - Mean Time to Detect
+- MTTR - Mean Time to Recovery
+- MTRS - Mean Time to Recover Service
+- SLO (Service Level Objective) - The target level of service for the reliability of your service
+- RPO (Recovery Point Objective) - The maximum acceptable amount of data loss measured in time
