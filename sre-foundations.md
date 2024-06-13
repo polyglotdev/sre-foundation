@@ -153,7 +153,7 @@ Missed SLO's have noticeable consequences on business performance:
 - New feature releases, patches, planned and un-planned downtime need to fit into this 43 minutes
 
 | Number of Nines | Availability (%) | Downtime per Year               | Downtime per Month      | Downtime per Week       | Downtime per Day       |
-|-----------------|------------------|---------------------------------|-------------------------|-------------------------|------------------------|
+| --------------- | ---------------- | ------------------------------- | ----------------------- | ----------------------- | ---------------------- |
 | 1               | 90.0             | 36 days, 12 hours               | 72 hours                | 16 hours, 48 minutes    | 2 hours, 24 minutes    |
 | 2               | 99.0             | 3 days, 15 hours, 36 minutes    | 7 hours, 12 minutes     | 1 hour, 40 minutes      | 14 minutes, 24 seconds |
 | 3               | 99.9             | 8 hours, 45 minutes, 36 seconds | 43 minutes, 12 seconds  | 10 minutes, 4.8 seconds | 1 minute, 26.4 seconds |
@@ -186,7 +186,7 @@ How could you achieve these?
 ## The VALET Dimension of SLO
 
 | Dimension      | SLO                                                           | Budget                                                       | Policy                                                                                        |
-|----------------|---------------------------------------------------------------|--------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
+| -------------- | ------------------------------------------------------------- | ------------------------------------------------------------ | --------------------------------------------------------------------------------------------- |
 | Volume/Traffic | Does the service handle the right volumes of data or traffic  | Budget 99.99% of HTTP requests per month succeed with 200 OK | Address scalability issues                                                                    |
 | Availability   | Is the service available when needed                          | Budget 99.9% availability/uptime                             | Address downtime issues/outages, zero downtime deployments                                    |
 | Latency        | Does the service deliver in a user-acceptable period of time? | Payload of 90% of HTTP responses returned in under 300ms     | Address performance issues, caching, load balancing                                           |
@@ -251,14 +251,14 @@ How could you achieve these?
 
 ## Why is Toil Bad?
 
-| Impact of High Toil | Individuals | Organizations|
-|---------------------|-----------|--------------|
-| Slow Progress | Manual work and firefighting (toil) takes up the majority of time | New features do not get released quickly, missed value opportunity. Shortage of team capacity|
-| Poor Quality | Manual work often results in mistakes, time consuming to fix, impact on reputation | Excessive costs in support of services |
-| Career Stagnation | Career progression is limited, no time for learning new skills | High staff turnover, loss of knowledge and experience |
-| Attritional | Toul is demotivating meaning people start looking elsewhere | Staff turnover results in extra costs and lost knowledge |
-| Unending | Never ending deluge of manual tasks, no time to find solutions, more time spent managing backlog of tasks than fixing them | Toil requires engineering effort to fix. If there is no engineering time available it won't be fixed. SLA's being breached |
-| Burnout | Personal and heath problems due to overload and disruptive work patterns | Potential for litigation and negative press |
+| Impact of High Toil | Individuals                                                                                                                | Organizations                                                                                                              |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| Slow Progress       | Manual work and firefighting (toil) takes up the majority of time                                                          | New features do not get released quickly, missed value opportunity. Shortage of team capacity                              |
+| Poor Quality        | Manual work often results in mistakes, time consuming to fix, impact on reputation                                         | Excessive costs in support of services                                                                                     |
+| Career Stagnation   | Career progression is limited, no time for learning new skills                                                             | High staff turnover, loss of knowledge and experience                                                                      |
+| Attritional         | Toul is demotivating meaning people start looking elsewhere                                                                | Staff turnover results in extra costs and lost knowledge                                                                   |
+| Unending            | Never ending deluge of manual tasks, no time to find solutions, more time spent managing backlog of tasks than fixing them | Toil requires engineering effort to fix. If there is no engineering time available it won't be fixed. SLA's being breached |
+| Burnout             | Personal and heath problems due to overload and disruptive work patterns                                                   | Potential for litigation and negative press                                                                                |
 
 ### Engineering Bankruptcy
 
@@ -694,4 +694,69 @@ Anti-fragility is all about understanding disorder and using it to your advantag
 - MTTR - Mean Time to Recovery
 - MTRS - Mean Time to Recover Service
 - SLO (Service Level Objective) - The target level of service for the reliability of your service
-- RPO (Recovery Point Objective) - The maximum acceptable amount of data loss measured in time
+- RPO (Recovery Point Objective) - The maximum acceptable amount of data loss measured in time. A Recovery Point Objective (RPO) is defined by business continuity planning. It is the maximum targeted period in which data (transactions) might be lost from an IT service due to a major incident. If RPO is measured in minutes (or even a
+few hours), then in practice, off-site mirrored backups must be continuously maintained - a daily off-site backup on tape will not be sufficient.
+
+## Shifting the Balance
+
+1st way: principle of flow
+2nd way: principle of feedback
+3rd way: principle of continual learning and experimentation
+
+1. Continual experimentation, taking risks and learning from failure
+2. Understanding that repetition and practice is the prerequisite to mastery
+
+- Allocate time from daily work
+- Create rituals that reward the team for taking risks.
+- Introduce faults into the system to increase resilience.
+
+### Benchmark v "Westrum Model"
+
+| Pathological(Power Orientated) | Bureaucratic(Rule Orientated)       | Generative(Performance Orientated) |
+| ------------------------------ | ----------------------------------- | ---------------------------------- |
+| Power Information is hidden    | Information is ignored              | Information is actively sought     |
+| Messengers are 🔫               | Messengers are isolated             | Messengers are trained             |
+| Responsibilities are shirked   | Responsibility is compartmentalized | Responsibility are shared          |
+| Bridging discouraged           | Bridging tolerated                  | Bridging is rewarded               |
+| Failure is covered up          | Organization is just and merciful   | Failure causes enquiry             |
+| Novelty is crushed             | Novelty creates problem             | Novelty is implemented             |
+
+1. Encouraging and creating boundary-spanning teams
+2. Making quality, availability and security everyone's responsibility, instead of just Ops
+3. Holding blameless post-mortems when incidents and outages occur to develop effective countermeasures and create global learning
+4. Maximizing everyone's creativity to find novel solutions to problems
+
+### Fire Drills
+
+- Fire drills are a great way to test your incident response plan
+- They can help you identify gaps in your plan and improve your response time
+
+1. Loss of facility
+2. Loss of Technology
+3. Loss of resources
+4. Loss of critical third-party services
+
+### Chaos Engineering
+
+- Chaos engineering is the discipline of experimenting on a system in order to build confidence in the system's capability to withstand turbulent conditions in production.
+
+[Additional Resources](https://dominiquehallan-links.com/chaos-engineering-report)
+
+### Chaos Engineering Next Steps
+
+1. Segregate the system into key components
+2. Test the system without key components being available
+3. Break the system in non-prod environments first
+4. Introduce failure of key components in prod
+5. Introduce database failures in prod
+6. Introduce total system failure in prod
+
+- holistic logging
+- identifying the dependencies
+- improve by error handling and recovery
+
+
+#### Tooling
+
+- [Chaos Monkey](https://dominiquehallan-links.com/chaos-monkey)
+- [Gremlin](https://dominiquehallan-links.com/gremlin)
